@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import unittest
 
-from task import (  # Assurez-vous d'importer correctement la classe Task depuis votre module
-    Task,
+from task import (
+    Task,  # Assurez-vous d'importer correctement la classe Task depuis votre module
 )
 
 
