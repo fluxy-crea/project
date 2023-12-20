@@ -4,18 +4,29 @@
 #include <nlohmann/json.hpp>
 
 int main() {
-  // Your low-level C++ code here
+  // Effectuer une requête GET
+  cpr::Response response = cpr::Get(cpr::Url{"localhost:8000"});
 
-  // Example: Making an HTTP request using cpr
-  cpr::Response response =
-      cpr::Get(cpr::Url{"https://jsonplaceholder.typicode.com/todos/1"});
+  // Afficher la réponse brute du serveur
+  std::cout << "Raw Response: " << response.text << std::endl;
 
-  // Example: Parsing JSON using nlohmann/json
-  nlohmann::json json_data = nlohmann::json::parse(response.text);
+  // Vérifier si la requête a réussi (code de statut 200)
+  if (response.status_code == 200) {
+    // Analyser la réponse JSON
+    nlohmann::json jsonData = nlohmann::json::parse(response.text);
 
-  // Example: Displaying the parsed JSON data
-  std::cout << "Title: " << json_data["title"] << std::endl;
-  std::cout << "Completed: " << json_data["completed"] << std::endl;
+    // Accéder aux données JSON
+    std::string title = jsonData["title"];
+    bool completed = jsonData["completed"];
+
+    // Afficher les données JSON
+    std::cout << "Title: " << title << std::endl;
+    std::cout << "Completed: " << (completed ? "true" : "false") << std::endl;
+  } else {
+    // Afficher une erreur si la requête échoue
+    std::cerr << "Erreur lors de la requête GET. Code de statut : "
+              << response.status_code << std::endl;
+  }
 
   return 0;
 }
