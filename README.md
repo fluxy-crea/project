@@ -21,4 +21,4 @@ La classe Task représente une résolution linéaire ax = b. Elle possède une f
 
 - Fichiers C++
 
-1.low_level : La classe low_level permet la lecture d'un fichier JSON sur une adresse locale et la résolution de l'équation en fonction de la méthode choisie. 
+1. low_level : La classe low_level permet la lecture d'un fichier JSON sur une adresse locale et la résolution de l'équation en fonction de la méthode choisie. 
