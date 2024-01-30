@@ -2,7 +2,7 @@
 
 ## Structure du Projet : 
 
-[Classes Python](#Classes Python) 
+- [Classes Python](#Classes Python) 
 
 1. Boss :
 La classe Boss est responsable d'ajouter x Task à une QueueClient (Managers).
@@ -19,6 +19,6 @@ La classe Proxy permet d'envoyer un fichier JSON correspondant à la Task à tra
 5. Task :
 La classe Task représente une résolution linéaire ax = b. Elle possède une fonction pour calculer le temps de résolution et résoudre l'équation. La classe Task peut également convertir les paramètres liés à la Task au format JSON.
 
-[Fichiers C++](#Fichiers C++)
+- [Fichiers C++](#Fichiers C++)
 
 low_level : La classe low_level permet la lecture d'un fichier JSON sur une adresse locale et la résolution de l'équation en fonction de la méthode choisie. 
